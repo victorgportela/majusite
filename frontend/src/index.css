@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold-gradient: linear-gradient(to right, #d4af37, #ffd700);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-inter text-gray-900 bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+  
+  * {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600;
+  }
+
+  .gold-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-gray-600 mb-12 font-light;
+  }
+  
+  /* Cards modernos */
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20;
+  }
+  
+  /* Inputs modernos */
+  .input-modern {
+    @apply w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-300;
+  }
+
+  /* Botões modernos */
+  .btn-modern {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium tracking-wide transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn-modern text-white gold-gradient hover:shadow-lg hover:shadow-gold-400/30;
+  }
+
+  .btn-outline {
+    @apply btn-modern border-2 border-white/20 hover:bg-white/10 backdrop-blur-sm;
+  }
+
+  /* Animações */
+  .hover-lift {
+    @apply transform transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-scale {
+    @apply transform transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Efeitos de texto */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+}
